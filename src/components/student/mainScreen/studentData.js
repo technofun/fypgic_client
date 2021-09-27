@@ -5,6 +5,7 @@ import { Container, Card, CardContent, makeStyles, Grid, TextField, Button } fro
 import QRCode from 'qrcode';
 import QrReader from 'react-qr-reader';
 import ResultCard from './ResultCard';
+import csLogo from '../../images/cs_logo.jpg';
 
 function StudentData() {
 
@@ -17,7 +18,7 @@ function StudentData() {
     const [resultStudent, setResultStudent] = useState({})
     useEffect(() => {
         axios.get('https://fypgic.herokuapp.com/api/student/allstudents')
-        // axios.get('http://localhost:5000/api/student/allstudents')
+            // axios.get('http://localhost:5000/api/student/allstudents')
             .then(res => setStudents(res.data))
             .catch(err => console.log(err))
         // console.log(scanResultWebCam);
@@ -43,11 +44,20 @@ function StudentData() {
 
     return (
         <div>
-{console.log(students)}
+            {console.log(students)}
             <div className="container" >
+           
                 <div className="row">
                     <div className=" col-sm-12 col-md-2 col-lg-2"> <img alt="image" src="http://gpgic.edu.pk/wp-content/uploads/2021/01/Untitled-1-1.png" /></div>
-                    <div className=" col-sm-10 col-md-10 col-lg-10"><span className="display-4"> Govt Islamia College Faisalabad </span></div>
+                    <div className=" col-sm-10 col-md-10 col-lg-10"><span className="display-4"> Govt Islamia Graduate College </span></div>
+
+                </div>
+                <div>
+                    <div className=" col-sm-10 col-md-10 col-lg-10" style={{ margin: 'auto',fontSize:'3rem' ,border:'1px solid black'}}>
+                        <span > Department of Computer Science </span>
+                        <img src={csLogo} width="100" />
+                    </div>
+
                 </div>
             </div>
             <div className="container">
@@ -98,7 +108,7 @@ function StudentData() {
                     }
                 </div>
             </div>
-{/* 
+            {/* 
             {
                 students
                     .filter(std => std._id === scanResultWebCam)

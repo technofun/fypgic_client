@@ -10,7 +10,7 @@ function HomePage() {
             <div>
 
                 <div style={{ textAlign: 'center' }}>
-                    <h1 className="display-3 m-auto">Govt Islamia College Faisalabad</h1>
+                    <h1 className="display-3 m-auto">Govt Islamia Graduate College Faisalabad</h1>
                     {/* <LoginScreen /> */}
                 </div>
                 <div className="d-flex" style={{justifyContent:'space-evenly'}}>
