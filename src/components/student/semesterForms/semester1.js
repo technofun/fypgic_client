@@ -27,7 +27,7 @@ export function Semester1() {
         e.preventDefault()
         if (studentName && fatherName &&
             collegeRollno && universityRollNo &&
-            registrationNo && cnic) {
+            registrationNo && cnic && email) {
 
             const newStudent = {
                 name: studentName,
@@ -40,9 +40,9 @@ export function Semester1() {
                 batch:selectBatch,
                 currentSemester: selectSemester,
                 semester: [
-                    {
-                        [selectSemester]: semesterSubjects
-                    }
+                    // {
+                    //     [selectSemester]: semesterSubjects
+                    // }
 
                 ]
             }
@@ -250,7 +250,7 @@ export function Semester1() {
                                     </div>
 
 
-                                    <ConditionalForm selectSemester={selectSemester} />
+                                    {/* <ConditionalForm selectSemester={selectSemester} /> */}
 
 
                                     <button

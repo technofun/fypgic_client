@@ -164,7 +164,7 @@ function GenerateQr() {
 
 
                                                 >Update Result</Link> */}
-                                                <Link className="btn btn-outline-warning" onClick={()=>updateStudent(card)} to="/updatemarks" target="_blank">Update Result</Link>
+                                                <Link className="btn btn-outline-warning" onClick={()=>updateStudent(card)} to="/updatemarks" >Update Result</Link>
                                                 <button id={card._id} className="btn btn-primary" onClick={generateQr}>Generate QR</button>
                                             </div>
                                         </div>

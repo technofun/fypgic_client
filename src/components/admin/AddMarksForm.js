@@ -11,6 +11,7 @@ import { StudentData } from '../contexts/studentContext';
 import { DeleteForever } from '@material-ui/icons'
 import './addMarks.scss'
 import axios from 'axios';
+
 import { Redirect, useLocation, useParams, useHistory } from 'react-router';
 function AddMarksForm() {
     const { semesterSubjects, setsemesterSubjects } = useContext(StudentData)
@@ -20,7 +21,7 @@ function AddMarksForm() {
     const myStudent = JSON.parse(mst)
     // console.log(semesterSubjects);
     // console.log(myStudent)
-
+    let history = useHistory();
     const [name, setName] = useState(myStudent.name)
     const [rollnumber, setRollNumber] = useState(myStudent.rollnumber)
     const [universityRollNumber, setUniversityRollNumber] = useState(myStudent.universityRollNumber)
@@ -63,7 +64,8 @@ function AddMarksForm() {
             .then(res => {
                 alert(`${myStudent.name} has been updated successfully!`)
                 localStorage.removeItem('myStudent');
-                window.close();
+                // window.close();
+                history.goBack()
             })
             .catch(err => alert(err))
 
@@ -155,7 +157,7 @@ function AddMarksForm() {
         <div className="container">
             <span className="cancel-editing"> Cancel<DeleteForever onClick={() => {
                 localStorage.removeItem('myStudent');
-                window.close();
+                history.goBack()
             }} id="icon" /> </span>
             <form>
                 {!mst ? <h2>No Details</h2> :
